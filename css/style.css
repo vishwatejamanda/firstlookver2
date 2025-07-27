@@ -2,9 +2,12 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-family: sans-serif;
-
+  scroll-behavior: smooth;
 }
-
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
 body {
   margin: 0;
 
@@ -1950,6 +1953,16 @@ textarea.w-input, textarea.w-select {
   }
 }
 
+@keyframes brands-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* This moves the track left by the width of ONE full set of logos */
+    transform: translateX(-50%);
+  }
+}
+
 .w-dyn-empty {
   background-color: #ddd;
   padding: 10px;
@@ -3435,17 +3448,22 @@ figcaption {
   align-items: center;
   display: flex;
 }
-
-.brands_list-wrapper {
-  justify-content: flex-start;
+.brands-animation-track {
+  display: flex;
   align-items: center;
+  /* Apply the animation here */
+  animation: brands-scroll 60s linear infinite;
+  width: fit-content; /* Makes the track wide enough to hold all items */
+}
+.brands_list-wrapper {
+  display: flex;
   max-width: 120rem;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
   position: relative;
-  -webkit-mask: linear-gradient(270deg, #0000, #000 15% 85%, #0000);
-  mask: linear-gradient(270deg, #0000, #000 15% 85%, #0000);
+  overflow: hidden; /* This hides the content that scrolls off-screen */
+  -webkit-mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
 }
 
 .brands_item-texts {
@@ -3459,13 +3477,25 @@ figcaption {
 }
 
 .brands_item-block {
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-radius: 16px;
+  /* Updated shadow: more vertical distance, less spread, slightly darker */
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* --- Existing styles below --- */
   grid-column-gap: 0.75rem;
   grid-row-gap: 0.75rem;
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
-  padding-right: 0.75rem; /* Reduced */
   display: flex;
+}
+
+.brands_item-block:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
 }
 
 .brands_heading {
@@ -3482,12 +3512,12 @@ figcaption {
 }
 
 .brands_item-logo-wrap {
+  /* background-color: #fff; --- This is no longer needed */
   aspect-ratio: 3;
-  background-color: #fff;
-  border-radius: 0.75rem; /* Reduced */
+  border-radius: 0.75rem;
   justify-content: center;
   align-items: center;
-  width: 9rem; /* Reduced from 12rem */
+  width: 9rem;
   display: flex;
 }
 
@@ -3516,11 +3546,12 @@ figcaption {
 }
 
 .brands_list {
-  justify-content: flex-start;
-  align-items: center;
+  flex-shrink: 0;
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.3rem;
 }
-
 .line {
   border-top: 1px dotted var(--_colors---grey--300);
   width: 100%;
@@ -3571,6 +3602,7 @@ figcaption {
   display: flex;
   position: relative;
   overflow: clip;
+  -webkit-box-shadow: -15px 15px 20px -5px rgba(0, 0, 0, 0.15);;
 }
 
 .home-about_heading {
@@ -3581,6 +3613,7 @@ figcaption {
   letter-spacing: var(--_typography---h3--letter-spacing);
   white-space: nowrap;
   position: absolute;
+  text-shadow: -15px 15px 20px -5px rgba(0, 0, 0, 0.15);;
 }
 
 .home-about_heading._2 {
@@ -3661,6 +3694,8 @@ figcaption {
   width: 100%;
   display: flex;
   position: relative;
+  -webkit-box-shadow: -15px 15px 20px -5px rgba(0, 0, 0, 0.15) ;
+
 }
 
 .work-list_image-main {
@@ -3785,6 +3820,7 @@ figcaption {
   width: 100%;
   position: relative;
   overflow: clip;
+  -webkit-box-shadow: -15px 15px 20px -5px rgba(0, 0, 0, 0.15);;
 }
 
 .services_item-infos {
@@ -3800,6 +3836,7 @@ figcaption {
   color: var(--_colors---grey--300);
   font-size: var(--fixed--0-875rem);
   font-weight: var(--_typography---font-weight--medium);
+
 }
 
 .services_content {
@@ -4077,6 +4114,7 @@ figcaption {
   font-weight: var(--_typography---font-weight--medium);
   letter-spacing: -.05em;
   margin-right: auto;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.12);;
 }
 
 .about-header_content {
@@ -5436,6 +5474,8 @@ figcaption {
   .home-about_heading, .home-about_img-text {
     font-size: var(--_typography---h4--font-size);
     -webkit-text-stroke-width: 0px;
+    text-shadow: -15px 15px 20px -5px rgba(0, 0, 0, 0.15);
+
   }
 
   .work-list_wrapper {

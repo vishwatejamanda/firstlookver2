@@ -3233,8 +3233,8 @@ figcaption {
   aspect-ratio: 1;
   justify-content: center;
   align-items: center;
-  height: 80%;
-  min-height: 50rem;
+  height: 60%;
+  min-height: 40rem;
   display: flex;
   position: absolute;
   transform: rotate(0);

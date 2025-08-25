@@ -3657,7 +3657,7 @@ figcaption {
 
 .home-about_img-text {
   font-family: var(--_typography---h3--font-family);
-  color: var(--_colors---primary--white);
+  color: #000000;
   font-size: var(--_typography---h3--font-size);
   line-height: var(--_typography---h3--line-height);
   font-weight: var(--_typography---h3--font-weight);
@@ -6455,6 +6455,13 @@ figcaption {
   .resources_font-2 {
     font-size: 5rem;
   }
+ .black-one {
+    background: none !important;             /* remove gradient bg */
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: black !important;  /* force fill to black */
+    color: black !important;
+ }
+
 
   .section_home-header {
     min-height: 100vh;
@@ -6464,6 +6471,7 @@ figcaption {
     max-width: 80vw;
     margin-left: auto;
     margin-right: auto;
+     gap: var(--spacer-medium);
   }
 
   .home-header_headings {
@@ -6489,6 +6497,7 @@ figcaption {
     white-space: normal;
     width: 80vw;
     max-width: 17rem;
+
   }
 
   .work-list_wrapper {

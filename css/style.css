@@ -2684,7 +2684,7 @@ figcaption {
 
 .text-style-label {
   font-family: var(--_typography---font-family--detail);
-  font-size: var(--fixed--0-875rem);
+  font-size: var(--fixed--1-125rem);
   font-weight: var(--_typography---font-weight--medium);
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -3601,6 +3601,9 @@ figcaption {
 .highli{
   text-decoration-color: #ff6d1f;
   color: #ff6d1f;
+}
+.black-one {
+  color: black !important;
 }
 .home-about_component {
   padding: var(--fixed--1rem);
@@ -6455,12 +6458,6 @@ figcaption {
   .resources_font-2 {
     font-size: 5rem;
   }
- .black-one {
-    background: none !important;             /* remove gradient bg */
-    -webkit-background-clip: unset !important;
-    -webkit-text-fill-color: black !important;  /* force fill to black */
-    color: black !important;
- }
 
 
   .section_home-header {
@@ -6914,9 +6911,3 @@ textarea.form-input {
 }
 #chat-send-btn:hover { color: #0056b3; }
 /* --- Replicated Button Styles from index.html --- */
-
-
-
-
-
-

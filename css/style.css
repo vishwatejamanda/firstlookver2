@@ -3906,7 +3906,7 @@ figcaption {
 }
 
 .cta_graphic {
-  filter: blur(20px);
+
   object-fit: cover;
   width: 120%;
   height: 120%;

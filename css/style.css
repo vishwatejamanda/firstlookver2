@@ -1,4 +1,11 @@
+/* Place in your CSS file at the top of the document */
+
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
+/* Place in your CSS file at the top of the document */
+
+@import url('https://fonts.googleapis.com/css2?family=Kristi:wght@400&display=swap');
 html {
+
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-family: sans-serif;
@@ -167,6 +174,12 @@ optgroup {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+.fld{
+  font-family: 'Kristi', cursive;
+  font-weight: bold;
+  font-size: large;
 }
 
 td, th {

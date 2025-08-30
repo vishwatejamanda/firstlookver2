@@ -3661,6 +3661,11 @@ figcaption {
 .home-about_img-text {
   font-family: var(--_typography---h3--font-family);
   color: #000000;
+  background: #FF6D1F;
+  background: linear-gradient(to right, #FF6D1F 80%, #F5E7C6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   font-size: var(--_typography---h3--font-size);
   line-height: var(--_typography---h3--line-height);
   font-weight: var(--_typography---h3--font-weight);

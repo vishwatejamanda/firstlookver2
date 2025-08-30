@@ -27,7 +27,54 @@
       -moz-osx-font-smoothing: grayscale;
     }
   </style>
-  </head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    .section_work-list {
+        background-color: #ffffff; /* A light grey background for the section */
+    }
+    .team-carousel {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 320px;
+      height: 400px;
+    }
+    .swiper-slide .work-list_block {
+        height: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        background-color: #fff;
+    }
+    .swiper-slide .work-list_images-wrap {
+        height: 75%;
+    }
+    .swiper-slide .team-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .swiper-slide .work-list_infos {
+        height: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 15px;
+    }
+    .swiper-pagination-bullet-active {
+        background: #FF6D1FFF !important;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        color: #FF6D1FFF !important;
+    }
+  </style>
+</head>
 <body>
 <nav class="navbar">
   <div class="padding-global">
@@ -168,7 +215,9 @@
               <div class="label_line"></div>
               <h2 class="text-style-label">About <a class="highli">F<span class="black-one">1</span>RST</a>LOOK Digital</h2>
             </div>
+
             <div class="brands_heading">
+              <br>
               <h3 class="heading-style-h4">We’re a remote crew of designers, web developers, editors, and social media specialists, united by one mission: to help brands own the scroll and make their first impression unforgettable. No agency fluff. No empty promises. Just a fresh team of creators who believe in our craft and know how to make brands stand out.</h3>
             </div>
           </div>
@@ -292,76 +341,130 @@
         </div>
       </div>
     </section>
-    <section id ="section_work-list" class="section_work-list">
+    <section id="section_work-list" class="section_work-list">
       <div class="padding-section-medium"></div>
       <div class="padding-global">
         <div class="container-medium">
           <div class="work-list_component">
-            <div class="work-list_head">
-              <h2>Team</h2>
-              <div class="work-list_number-wrap">
-                <div class="work-list_number">3</div>
+            <div class="work-list_head" style="text-align: center;">
+              <div class="label_wrap" style="justify-content: center;">
+                <div class="label_line"></div>
+                <h2 class="text-style-label">MEET OUR TEAM</h2>
               </div>
+              <div class="spacer-medium"></div>
+              <h3 class="heading-style-h4">The creative minds who turn ideas into reality.</h3>
             </div>
             <div class="spacer-xlarge"></div>
-            <div class="work-list_wrapper w-dyn-list">
-              <div role="list" class="work-list_list w-dyn-items">
-                <div role="listitem" class="work-list_item w-dyn-item">
-                  <a aria-label="link to project" href="https://www.linkedin.com/in/adithya-vatsa-382163175/" class="work-list_block w-inline-block">
+
+            <!-- Swiper -->
+            <div class="swiper-container team-carousel">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <a href="#" class="work-list_block w-inline-block">
                     <div class="work-list_images-wrap">
-                      <div class="work-list_image-main">
-                        <img animation="scale" loading="lazy" alt="" src="founder.png" sizes="100vw" srcset="founder.png 500w, founder.png 800w, founder.png 1080w, founder.png 1600w, founder.png 1920w" class="work-list_img-main"/>
-                        <div class="hover_pill">View case</div>
-                      </div>
-                      <div class="work-list_image-second">
-                        <img loading="lazy" src="adi.jpeg" alt="" sizes="100vw" srcset="adi.jpeg 500w, adi.jpeg 800w, adi.jpeg 1024w" class="work-list_img-second"/>
-                      </div>
+                      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop" class="team-image" alt="Social Media Team">
                     </div>
                     <div class="work-list_infos">
-                      <h3 class="heading-style-h6">Vatsa Adithya</h3>
-                      <div class="work-list_desc">Founder</div>
+                      <h3 class="heading-style-h6">Social Media Content & Management</h3>
+                      <div class="work-list_desc">Social Media Manager, Community Manager</div>
                     </div>
                   </a>
                 </div>
-                <div role="listitem" class="work-list_item w-dyn-item">
-                  <a aria-label="link to project" href="/works/movi" class="work-list_block w-inline-block">
+
+                <div class="swiper-slide">
+                  <a href="#" class="work-list_block w-inline-block">
                     <div class="work-list_images-wrap">
-                      <div class="work-list_image-main">
-                        <img animation="scale" loading="lazy" alt="" src="devteam.png" sizes="100vw" srcset="devteam.png 500w, devteam.png 800w, devteam.png 1080w, devteam.png 1600w, devteam.png 2000w, devteam.png 2400w" class="work-list_img-main"/>
-                        <div class="hover_pill">View case</div>
-                      </div>
-                      <div class="work-list_image-second">
-                        <img loading="lazy" src="https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/6855709ad5c427b14b9965dd_Beige%20Textured%20Fabric.webp" alt="" sizes="100vw" srcset="https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/6855709ad5c427b14b9965dd_Beige%20Textured%20Fabric-p-500.webp 500w, https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/6855709ad5c427b14b9965dd_Beige%20Textured%20Fabric-p-800.webp 800w, https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/6855709ad5c427b14b9965dd_Beige%20Textured%20Fabric.webp 967w" class="work-list_img-second"/>
-                      </div>
+                      <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop" class="team-image" alt="Content Creation Team">
                     </div>
                     <div class="work-list_infos">
-                      <h3 class="heading-style-h6">Developers</h3>
-                      <div class="work-list_desc">Cutting-edge running gear designed to enhance every stride</div>
+                      <h3 class="heading-style-h6">Content Creation</h3>
+                      <div class="work-list_desc">Content Creator, Copywriter, Production Manager</div>
                     </div>
                   </a>
                 </div>
-                <div role="listitem" class="work-list_item w-dyn-item">
-                  <a aria-label="link to project" href="/works/grano" class="work-list_block w-inline-block">
+
+                <div class="swiper-slide">
+                  <a href="#" class="work-list_block w-inline-block">
                     <div class="work-list_images-wrap">
-                      <div class="work-list_image-main">
-                        <img animation="scale" loading="lazy" alt="" src="https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/6859e04c91351b6a5865763b_phone.webp" sizes="100vw" srcset="https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/6859e04c91351b6a5865763b_phone-p-500.webp 500w, https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/6859e04c91351b6a5865763b_phone-p-800.webp 800w, https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/6859e04c91351b6a5865763b_phone-p-1080.webp 1080w, https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/6859e04c91351b6a5865763b_phone-p-1600.webp 1600w, https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/6859e04c91351b6a5865763b_phone.webp 2000w" class="work-list_img-main"/>
-                        <div class="hover_pill">View case</div>
-                      </div>
-                      <div class="work-list_image-second">
-                        <img loading="lazy" src="https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/685570bf0d9a0c7314531c42_Serene%20Green%20Landscape.webp" alt="" sizes="100vw" srcset="https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/685570bf0d9a0c7314531c42_Serene%20Green%20Landscape-p-500.webp 500w, https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/685570bf0d9a0c7314531c42_Serene%20Green%20Landscape-p-800.webp 800w, https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/685570bf0d9a0c7314531c42_Serene%20Green%20Landscape-p-1080.webp 1080w, https://cdn.prod.website-files.com/68556bd054f88d2dbca90d78/685570bf0d9a0c7314531c42_Serene%20Green%20Landscape.webp 1350w" class="work-list_img-second"/>
-                      </div>
+                      <img src="https://images.unsplash.com/photo-1611068813580-b07ef920964b?q=80&w=1935&auto=format&fit=crop" class="team-image" alt="Video Editing & Graphic Design Team">
                     </div>
                     <div class="work-list_infos">
-                      <h3 class="heading-style-h6">Designers</h3>
-                      <div class="work-list_desc">Live to design</div>
+                      <h3 class="heading-style-h6">Video Editing & Graphic Design</h3>
+                      <div class="work-list_desc">Video Editor, Graphic Designer</div>
                     </div>
                   </a>
                 </div>
+
+                <div class="swiper-slide">
+                  <a href="#" class="work-list_block w-inline-block">
+                    <div class="work-list_images-wrap">
+                      <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop" class="team-image" alt="Digital Marketing & Ads Team">
+                    </div>
+                    <div class="work-list_infos">
+                      <h3 class="heading-style-h6">Digital Marketing & Ads</h3>
+                      <div class="work-list_desc">Performance Marketer, Ad Strategist</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="#" class="work-list_block w-inline-block">
+                    <div class="work-list_images-wrap">
+                      <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" class="team-image" alt="SEO & Local Growth Team">
+                    </div>
+                    <div class="work-list_infos">
+                      <h3 class="heading-style-h6">SEO & Local Growth</h3>
+                      <div class="work-list_desc">SEO Specialist, Local Growth Expert</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="#" class="work-list_block w-inline-block">
+                    <div class="work-list_images-wrap">
+                      <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop" class="team-image" alt="Website Design & Development Team">
+                    </div>
+                    <div class="work-list_infos">
+                      <h3 class="heading-style-h6">Website Design & Development</h3>
+                      <div class="work-list_desc">Web Designer, Web Developer</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="#" class="work-list_block w-inline-block">
+                    <div class="work-list_images-wrap">
+                      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" class="team-image" alt="Content & Strategy Team">
+                    </div>
+                    <div class="work-list_infos">
+                      <h3 class="heading-style-h6">Content & Strategy</h3>
+                      <div class="work-list_desc">Brand Strategist, Content Planner</div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="#" class="work-list_block w-inline-block">
+                    <div class="work-list_images-wrap">
+                      <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop" class="team-image" alt="Email & CRM Marketing Team">
+                    </div>
+                    <div class="work-list_infos">
+                      <h3 class="heading-style-h6">Email & CRM Marketing</h3>
+                      <div class="work-list_desc">Email Marketing Specialist, CRM Manager</div>
+                    </div>
+                  </a>
+                </div>
+
               </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
             </div>
+
           </div>
         </div>
       </div>
+      <div class="padding-section-medium"></div>
     </section>
     <section id ="section_services" class="section_services">
 
@@ -817,6 +920,35 @@
         });
       });
     }
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.team-carousel', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      loop: true,
+      autoplay: {
+        delay: 3000,         //3 seconds
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false, // keep rotating even on hover
+      },
+      speed: 1000,           // smooth transition (1 second)
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
   });
 </script>
 </body>

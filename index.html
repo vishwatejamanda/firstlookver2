@@ -9,7 +9,7 @@
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content="Webflow" name="generator"/>
   <script> href="app.js"</script>
-  <link href="/css/style.css" rel="stylesheet" />
+  <link href="./css/style.css" rel="stylesheet" />
   <script type="text/javascript">
     !function(o, c) {
       var n = c.documentElementfavilogo.png
@@ -72,6 +72,70 @@
     }
     .swiper-button-next, .swiper-button-prev {
         color: #FF6D1FFF !important;
+    }
+
+    /* Mobile Responsive Styles */
+    @media screen and (max-width: 991px) {
+      .cta_component {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+      }
+      .cta_graphic-wrap {
+        width: 100%;
+        max-width: 100%;
+      }
+      .swiper-slide {
+        width: 280px;
+        height: 360px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .home-header_heading._1,
+      .home-header_heading._2,
+      .home-header_heading._3 {
+        font-size: clamp(2rem, 8vw, 4rem);
+      }
+      .cta_graphic-wrap {
+        aspect-ratio: 16/9;
+        margin-bottom: 2rem;
+      }
+      .cta_graphic video {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        width: 260px;
+        height: 340px;
+      }
+      .navbar_links-wrap {
+        display: none;
+      }
+      .home-header_imgs-wrap {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media screen and (max-width: 479px) {
+      .cta_component {
+        padding: 1rem;
+      }
+      .cta_graphic-wrap {
+        border-radius: 15px;
+      }
+      .swiper-slide {
+        width: 240px;
+        height: 320px;
+      }
+      .home-header_heading._1 {
+        font-size: 2rem;
+      }
+      .styled-form .form-group {
+        flex-direction: column;
+      }
+      .styled-form .form-input {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -484,7 +548,7 @@
                 <h2 class="text-style-label">Services</h2>
               </div>
               <div class="spacer-large"></div>
-              <h2 class="heading-style-h3">At <span class="highli">F<span class="black-one">1</span>rst</span> Look, we design brands, websites, and apps with clarity and purpose — clean visuals, smart strategy, and thoughtful detail that move people and ideas forward.</h2>
+              <h2 class="heading-style-h3">At <span class="highli">F<span class="black-one">1</span>rst</span> Look, we craft brands, websites, and digital experiences that combine clean design, smart strategy, and powerful storytelling — helping businesses connect with their audience, grow online, and move ideas into action.</h2>
             </div>
             <div class="services_items">
               <div class="services_item">
@@ -557,10 +621,10 @@
         <div class="container-medium">
           <div class="cta_component">
             <div class="cta_graphic-wrap">
-              <div data-poster-url="/poster.jpg" data-video-urls="/reel1.mp4,/reel1.mp4" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="cta_graphic w-background-video w-background-video-atom">
-                <video id="eb528ada-41c3-d51b-6c40-f1574b5466ef-video" autoplay="" loop="" style="background-image:url(&quot;/poster.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-                  <source src="/reel1.mp4" data-wf-ignore="true"/>
-                  <source src="/reel1.mp4" data-wf-ignore="true"/>
+              <div data-poster-url="poster.jpg" data-video-urls="reel1.mp4" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="cta_graphic w-background-video w-background-video-atom">
+                <video id="eb528ada-41c3-d51b-6c40-f1574b5466ef-video" autoplay loop muted playsinline webkit-playsinline preload="auto" style="background-image:url('poster.jpg')" data-wf-ignore="true" data-object-fit="cover">
+                  <source src="reel1.mp4" type="video/mp4" data-wf-ignore="true"/>
+                  Your browser does not support the video tag.
                 </video>
               </div>
             </div>
@@ -570,7 +634,7 @@
                   <div class="cta_pill">Talk to us</div>
                 </div>
                 <div class="spacer-small"></div>
-                <h2 class="heading-style-h5">Partner with a design team that turns ideas into powerful digital experiences</h2>
+                <h2 class="heading-style-h5">Partner with a <span class="highli">F1</span><span class="highli">RST</span>Look that turns ideas into powerful digital experiences</h2>
                 <br>
 
                 <form action="https://formspree.io/f/xpwldvle" method="POST" class="styled-form">
@@ -810,9 +874,8 @@
     const sendBtn = document.getElementById('chat-send-btn');
 
 
-    const GEMINI_API_KEY = "AIzaSyDF9-UR8_e-zP8DQTg8RwkTa_M91VbKLn8";
-    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
-
+    const GEMINI_API_KEY = "AIzaSyBwrXzwehmG65eXY44tAEtSD3JMwSVXRGU";
+    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent`;
     const systemInstruction = {
       role: "user",
       parts: [{
@@ -853,9 +916,12 @@
       messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
       try {
-        const response = await fetch(API_URL, {
+       const response = await fetch(API_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'x-goog-api-key': GEMINI_API_KEY // <-- API Key passed here
+          },
           body: JSON.stringify({ contents: messageHistory })
         });
 
@@ -962,6 +1028,26 @@
         clickable: true,
       },
     });
+
+    // Ensure video plays on all devices
+    const video = document.getElementById('eb528ada-41c3-d51b-6c40-f1574b5466ef-video');
+    if (video) {
+      // Force play on load
+      video.play().catch(function(error) {
+        console.log('Video autoplay failed:', error);
+        // If autoplay fails, try playing on user interaction
+        document.addEventListener('click', function playOnClick() {
+          video.play();
+          document.removeEventListener('click', playOnClick);
+        }, { once: true });
+      });
+
+      // Ensure video stays muted for autoplay
+      video.muted = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('webkit-playsinline', '');
+    }
   });
 </script>
 </body>

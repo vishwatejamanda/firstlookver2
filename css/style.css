@@ -4020,6 +4020,175 @@ figcaption {
   width: var(--fixed--1-5rem);
 }
 
+.social-orbit {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid #ff6d1f66;
+  color: #141414;
+  background:
+    radial-gradient(circle at 30% 25%, #fff9f2 0%, #fde7cf 45%, #f5dfc3 100%);
+  box-shadow:
+    0 8px 20px #00000014,
+    inset 0 1px 0 #ffffffcc;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  will-change: transform;
+  animation: social-float 3.5s ease-in-out infinite;
+}
+
+.social-orbit:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.social-orbit:nth-child(3) {
+  animation-delay: .4s;
+}
+
+.social-orbit:nth-child(4) {
+  animation-delay: .6s;
+}
+
+.social-orbit:nth-child(5) {
+  animation-delay: .8s;
+}
+
+.social-orbit-ring {
+  width: 160%;
+  height: 160%;
+  border: 1px dashed #ff6d1f40;
+  border-radius: 50%;
+  position: absolute;
+  opacity: .7;
+  animation: orbit-spin 10s linear infinite;
+}
+
+.social-orbit::before {
+  content: "";
+  background: radial-gradient(circle, #ff6d1f66 0%, #ff6d1f00 72%);
+  border-radius: 50%;
+  position: absolute;
+  inset: -45%;
+  opacity: 0;
+  transform: scale(.6);
+  transition: opacity .35s, transform .35s;
+}
+
+.social-orbit::after {
+  content: "";
+  width: 35%;
+  height: 180%;
+  background: linear-gradient(180deg, #ffffff99 0%, #ffffff00 100%);
+  position: absolute;
+  top: -40%;
+  left: -45%;
+  transform: rotate(24deg);
+  animation: social-sheen 4.5s ease-in-out infinite;
+}
+
+.social-orbit .footer_social-media {
+  width: 1.2rem;
+  height: 1.2rem;
+  position: relative;
+  z-index: 1;
+  transition: transform .3s ease;
+}
+
+.social-ripple {
+  width: .625rem;
+  height: .625rem;
+  border: 1px solid #ff6d1f80;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: .9;
+  transform: translate(-50%, -50%) scale(.4);
+  pointer-events: none;
+  animation: social-ripple-out .7s ease-out forwards;
+}
+
+.social-orbit:hover {
+  border-color: #ff6d1fb0;
+  color: #ff6d1f;
+  transform: translateY(-4px) scale(1.05);
+}
+
+.social-orbit:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.social-orbit:hover .footer_social-media {
+  transform: scale(1.07);
+}
+
+.social-orbit:hover .social-orbit-ring {
+  border-color: #ff6d1f73;
+  animation-duration: 3s;
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes social-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes social-sheen {
+  0%, 65%, 100% {
+    left: -45%;
+    opacity: 0;
+  }
+  72% {
+    opacity: .85;
+  }
+  88% {
+    left: 115%;
+    opacity: 0;
+  }
+}
+
+@keyframes social-ripple-out {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(6);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .social-orbit {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-orbit,
+  .social-orbit-ring {
+    animation: none !important;
+  }
+
+  .social-orbit::after,
+  .social-ripple {
+    animation: none !important;
+  }
+}
+
 .footer_template-link {
   color: var(--_colors---grey--300);
   font-size: .75rem;
